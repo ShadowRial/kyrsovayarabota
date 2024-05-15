@@ -1,0 +1,550 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Центр обучения и переподготовки</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <div class="py-1 bg-black top">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+	    		<div class="col-lg-12 d-block">
+		    		<div class="row d-flex">
+		    			<div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <span class="text">+ 7-961-653-02-5</span>
+					    </div>
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						    <span class="text">centeremail@gmil.com</span>
+					    </div>
+					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
+						    <p class="mb-0 register-link"><span>Прием по телефону:</span> <span>Понедельник - Суббота</span> <span>8:00 - 23:00</span></p>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="{% url 'home' %}">Центр обучения и переподготовки</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Курсы
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	{% if user.is_authenticated %}
+				<li class="nav-item cta"><a href="admin/" class="nav-link">Админ панель</a></li>
+				{% endif %}
+	        	<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
+	        	<li class="nav-item active"><a href="{% url 'about' %}" class="nav-link">О нас</a></li>
+	        	<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Курсы</a></li>
+	        	<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Информация</a></li>
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Контакты</a></li>
+	          {% if user.is_authenticated %}
+                <li class="nav-item cta"><a href="profile/" class="nav-link">  Профиль  </a></li>
+            {% else %}
+                <li class="nav-item cta"><a href="register/" class="nav-link">Записаться на курсы</a></li>
+            {% endif %}
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <section class="hero-wrap hero-wrap-2" style="background-image: url({% static 'img/bkgr2.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate text-center mb-4">
+            <h1 class="mb-2 bread">О нас</h1>
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}">Главная <i class="ion-ios-arrow-forward"></i></a></span> <span>О нас <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+		<section class="ftco-section ftco-wrap-about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7 d-flex">
+						<div class="img img-1 mr-md-2" style="background-image: url({% static 'img/photo1.jpg' %});"></div>
+						<div class="img img-2 ml-md-2" style="background-image: url({% static 'img/photo2.jpg' %});"></div>
+					</div>
+					<div class="col-md-5 wrap-about pt-5 pt-md-5 pb-md-3 ftco-animate">
+	          <div class="heading-section mb-4 my-5 my-md-0">
+	          	<span class="subheading">О нас</span>
+	            <h2 class="mb-4">Центр обучения и переподготовки</h2>
+	          </div>
+	          <p>Наш центр переподготовки предоставляет безработным или желающим сменить профессию лицам возможность приобрести новые навыки и знания, необходимые для достижения своих карьерных целей. Широкий спектр программ обучения, опытные инструкторы, полное сопровождение на каждом этапе пути.</p>
+						<p class="time">
+							<span>Пн - Сб <strong>8:00 - 23:00</strong></span>
+							<span><a href="#">+ 7-961-653-02-5</a></span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		<section class="ftco-section ftco-counter img ftco-no-pt" id="section-counter">
+    	<div class="container">
+    		<div class="row d-md-flex">
+    			<div class="col-md-9">
+    				<div class="row d-md-flex align-items-center">
+		          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="18">0</strong>
+		                <span>Лет опыта</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="100">0</strong>
+		                <span>Курсов</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="50">0</strong>
+		                <span>Специалистов</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="15000">0</strong>
+		                <span>Выпускников</span>
+		              </div>
+		            </div>
+		          </div>
+	          </div>
+          </div>
+          <div class="col-md-3 text-center text-md-left">
+          	<p>Свяжитесь с нами сегодня, чтобы перейти на новый этап своей карьеры.</p>
+          </div>
+        </div>
+    	</div>
+    </section>
+
+		<section class="ftco-section bg-light">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-12 text-center heading-section ftco-animate">
+          	<span class="subheading">Программы</span>
+            <h2 class="mb-4">Программы обучения</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-cake"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Работники бюджетной сферы</h3>
+                <p>Работники образования, социального обслуживания, культуры, физической культуры и спорта, библиотечного обслуживания.</p>
+              </div>
+            </div>      
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-meeting"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Безработные граждане</h3>
+                <p>Безработные граждане, женщины, находящиеся в отпуске по уходу за детьми и другие категории граждан, направляемые центрами занятости населения.</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-md-4 d-flex align-self-stretch ftco-animate text-center">
+            <div class="media block-6 services d-block">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-tray"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Рабочие и служащие</h3>
+                <p>Представители рабочих профессий из сфер торговли, социальных и бытовых услуг, технического обслуживания.</p>
+              </div>
+            </div>      
+          </div>
+        </div>
+			</div>
+		</section>
+    
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-12 text-center heading-section ftco-animate">
+          	<span class="subheading">Мы</span>
+            <h2 class="mb-4">Только лучшие специалисты</h2>
+          </div>
+        </div>	
+				<div class="row">
+					<div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url({% static 'img/muzhik.jpg' %});"></div>
+							<div class="text pt-4">
+								<h3>Совин Иван Олегович</h3>
+								<span class="position mb-2">Общий стаж: 26 лет</span>
+								<!-- <p>A small river named Duden flows by their place and supplies</p> -->
+								<div class="faded">
+									<!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
+									<ul class="ftco-social d-flex">
+		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		              </ul>
+	              </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url({% static 'img/ded.jpg' %});"></div>
+							<div class="text pt-4">
+								<h3>Бунин Олег Артемович</h3>
+								<span class="position mb-2">Общий стаж: 30 лет</span>
+								<!-- <p>A small river named Duden flows by their place and supplies</p> -->
+								<div class="faded">
+									<!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
+									<ul class="ftco-social d-flex">
+		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		              </ul>
+	              </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url({% static 'img/nechaev.jpg' %});"></div>
+							<div class="text pt-4">
+								<h3>Нечаев Сергей Майорович</h3>
+								<span class="position mb-2">Общий стаж: 33 года</span>
+								<!-- <p>A small river named Duden flows by their place and supplies</p> -->
+								<div class="faded">
+									<!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
+									<ul class="ftco-social d-flex">
+		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		              </ul>
+	              </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-3 ftco-animate">
+						<div class="staff">
+							<div class="img" style="background-image: url({% static 'img/jeck.jpg' %});"></div>
+							<div class="text pt-4">
+								<h3>Люк Саймон</h3>
+								<span class="position mb-2">Общий стаж: 23 года</span>
+								<!-- <p>A small river named Duden flows by their place and supplies</p> -->
+								<div class="faded">
+									<!-- <p>I am an ambitious workaholic, but apart from that, pretty simple person.</p> -->
+									<ul class="ftco-social d-flex">
+		                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+		                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+		              </ul>
+	              </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="ftco-section img" style="background-image: url({% static 'img/bkgr1.jpg' %})" data-stellar-background-ratio="0.5">
+			<div class="container">
+				<div class="row d-flex">
+          <div class="col-md-7 ftco-animate makereservation p-4 px-md-5 pb-md-5">
+          	<div class="heading-section ftco-animate mb-5 text-center">
+	          	<span class="subheading">Заявка на обучение</span>
+	            <h2 class="mb-4">Отправить заявку</h2>
+	          </div>
+            <form action="#">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Имя</label>
+                    <input type="text" class="form-control" placeholder="Имя">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" placeholder="Ваш Email">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Фамилия</label>
+                    <input type="text" class="form-control" placeholder="Фамилия">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Телефон</label>
+                    <input type="text" class="form-control" id="book_date" placeholder="Номер телефона">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Отчество</label>
+                    <input type="text" class="form-control" id="book_time" placeholder="Отчество">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="">Категория</label>
+                    <div class="select-wrap one-third">
+                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                      <select name="" id="" class="form-control">
+                        <option value="">Не выбрано</option>
+                        <option value="">Переподготовка</option>
+                        <option value="">Повышение квалификации</option>
+                        <option value="">Проф обучение</option>
+                        <option value="">Проверка знания требований</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                  <div class="form-group text-center">
+                    <input type="submit" value="Отправить" class="btn btn-primary py-3 px-5">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+			</div>
+		</section>
+		
+		<section class="ftco-section testimony-section img">
+			<div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-12 text-center heading-section ftco-animate">
+          	<span class="subheading">Отзывы</span>
+            <h2 class="mb-4">Наши клиенты</h2>
+          </div>
+        </div>
+        <div class="row ftco-animate justify-content-center">
+          <div class="col-md-12">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url({% static 'img/otziv2.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Быстрое, доступное, комфортное обучение, по всем вопросам ориентирует куратор. Рекомендую.</p>
+                    <p class="name">Лев Предвестников</p>
+                    <span class="position">Выпускник</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url({% static 'img/otziv1.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Получила огромный объем очень полезной информации для педагогической деятельности. Спасибо!</p>
+                    <p class="name">Элла Аякова</p>
+                    <span class="position">Выпускник</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url({% static 'img/nemuzhik.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Проходила курсы повышения квалификации в ноябре 2023. Все очень понравилось. Благодарю.</p>
+                    <p class="name">Леонида Ке Цин</p>
+                    <span class="position">Выпускник</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url({% static 'img/otziv4.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Даже такому тупому человеку, как я, было все понятно! Спасибо за ваш труд!.</p>
+                    <p class="name">Валерий Тугодумов</p>
+                    <span class="position">Выпускник</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap text-center pb-5">
+                  <div class="user-img mb-4" style="background-image: url({% static 'img/otziv6.png' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text p-3">
+                    <p class="mb-4">Диплом прислали вовремя. Рекомендую.</p>
+                    <p class="name">Алиса Страначудесова</p>
+                    <span class="position">Выпускник</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Центр обучения и переподготовки</h2>
+              <p>Приобретите новые навыки и знания, необходимые для достижения ваших карьерных целей, в нашем центре переподготовки.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Часы приема по телефону</h2>
+              <ul class="list-unstyled open-hours">
+                <li class="d-flex"><span>Пн</span><span>9:00 - 23:00</span></li>
+                <li class="d-flex"><span>Вт</span><span>9:00 - 23:00</span></li>
+                <li class="d-flex"><span>Ср</span><span>9:00 - 23:00</span></li>
+                <li class="d-flex"><span>Чт</span><span>9:00 - 23:00</span></li>
+                <li class="d-flex"><span>Пт</span><span>9:00 - 23:00</span></li>
+                <li class="d-flex"><span>Сб</span><span>9:00 - 23:00</span></li>
+                <li class="d-flex"><span>Вс</span><span>Выходной</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Соцсети</h2>
+              <div class="thumb d-sm-flex">
+	            	<a href="#" class="thumb-menu img" style="background-image: url({% static 'img/inst-1.jpg' %});">
+	            	</a>
+	            	<a href="#" class="thumb-menu img" style="background-image: url({% static 'img/inst-2.jpg' %});">
+	            	</a>
+	            	<a href="#" class="thumb-menu img" style="background-image: url({% static 'img/inst-3.jpg' %});">
+	            	</a>
+	            </div>
+	            <div class="thumb d-flex">
+	            	<a href="#" class="thumb-menu img" style="background-image: url({% static 'img/inst-4.jpg' %});">
+	            	</a>
+	            	<a href="#" class="thumb-menu img" style="background-image: url({% static 'img/inst-1.jpg' %});">
+	            	</a>
+	            	<a href="#" class="thumb-menu img" style="background-image: url({% static 'img/inst-2.jpg' %});">
+	            	</a>
+	            </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Рассылка</h2>
+            	<p>Подписаться на рассылку новостей.</p>
+              <form action="#" class="subscribe-form">
+                <div class="form-group">
+                  <input type="text" class="form-control mb-2 text-center" placeholder="Введите ваш email">
+                  <input type="submit" value="Подписаться" class="form-control submit px-3">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Все права защищены </a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+    
+  </body>
+</html>
